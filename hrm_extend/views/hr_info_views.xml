@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="emergency_contact_info_view_tree" model="ir.ui.view">
+        <field name="name">emergency_contact_info_view_tree</field>
+        <field name="model">hr.emergency.contact.line</field>
+        <field name="arch" type="xml">
+            <tree string="emergency_contact_info_tree" editable="bottom">
+                <field name="name"/>
+                <field name="phone_number"/>
+                <field name="address"/>
+            </tree>
+        </field>
+    </record>
+    <record id="education_info_view_tree" model="ir.ui.view">
+        <field name="name">education_info_view_tree</field>
+        <field name="model">hr.education.line</field>
+        <field name="arch" type="xml">
+            <tree string="education_info_tree" editable="bottom">
+                <field name="name"/>
+                <field name="degree"/>
+                <field name="passing_year"/>
+            </tree>
+        </field>
+    </record>
+    <record id="education_degree_view_tree" model="ir.ui.view">
+        <field name="name">education_degree_view_tree</field>
+        <field name="model">hr.education.degree</field>
+        <field name="arch" type="xml">
+            <tree string="education_degree_tree">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="education_degree_view_form" model="ir.ui.view">
+        <field name="name">education_degree_view_form</field>
+        <field name="model">hr.education.degree</field>
+        <field name="arch" type="xml">
+            <form string="education_degree_form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+
+                        </group>
+
+
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="degree_configuration_action" model="ir.actions.act_window">
+        <field name="name">Degree Configuration</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.education.degree</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="degree_configuration_categ" name="Degree" parent="hr.menu_human_resources_configuration"
+              action="degree_configuration_action" sequence="3"/>
+</odoo>

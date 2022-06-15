@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr_applicant_form_inherit" model="ir.ui.view">
+            <field name="name">inherit.hr.applicant.form</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//separator" position="before">
+                    <group>
+                        <field name="education_info_ids"/>
+                    </group>
+                    <group>
+                        <field name="emergence_contact_ids"/>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="assign_manager"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

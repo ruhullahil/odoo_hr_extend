@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_education_degree_admin,hrm_extend.hr_education_degree,model_hr_education_degree,base.group_user,1,1,1,1
+access_hr_education_line_admin,hrm_extend.hr_education_line,model_hr_education_line,base.group_user,1,1,1,1
+access_hr_emergency_contact_line_admin,hrm_extend.hr_emergency_contact_line,model_hr_emergency_contact_line,base.group_user,1,1,1,1
